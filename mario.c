@@ -13,7 +13,7 @@ int main (void)
        
     }
     while (number < 1 || number > 8);
-    printf("Stored: %i\n", number);
+    
     
     
     
