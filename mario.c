@@ -3,7 +3,7 @@
 
 
 
-int main (void)
+int main(void)
 {
     //We ask user for information of how tall we want the pyramid
     int number;
@@ -23,7 +23,7 @@ int main (void)
         //we add spaces according to the number given by user - level as each level u need less spaces
         for(int spaces = 0; spaces < number - level - 1; spaces++)
         {
-           printf(" ");
+          printf(" ");
         }
         
       //for each level we print a certain amount of blocks (#)
