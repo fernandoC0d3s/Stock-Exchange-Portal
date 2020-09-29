@@ -4,12 +4,15 @@
 
 int main(void)
 {
+    // we will take change as float
     float change;
     do
     {
-        change = get_float ("Change owed: ");
-    }while (change < 0.00);
-     
+        change = get_float("Change owed: ");
+    }while(change < 0.00);
+    
+    // we multiply by 100 and round for complexity purposes  
+    //sequence of while loops with the value of coins and an incremental count to keep track of the amount of coins
     int cents = round (100 * change);
     int coinCount = 0;
     while(cents >= 25)
