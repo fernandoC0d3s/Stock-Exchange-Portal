@@ -8,40 +8,39 @@
 int main(void)
 {
     
-    
     int letterCount = 0;
     int space = 0;
     int sentence = 0;
     //We ask user until it has a prompt
    // do
     //{
-        string prompt = get_string("Enter prompt to analyze the readibility \n");
-        int lengthOfPrompt = strlen(prompt);
+    string prompt = get_string("Enter prompt to analyze the readibility \n");
+    int lengthOfPrompt = strlen(prompt);
     //}
     //while (lengthOfPrompt <= 0);
     for (int i = 0; i < lengthOfPrompt; i++)
     {
-        if (isalpha(prompt[i])) //CHECK FOR RANGES A-Z as letters are not being counted properly
+        if (isalpha(prompt[i])) 
         {
             letterCount++;
         }
         else if (prompt[i] == 32)
         {
-            space++;                                //Spaces is accurate therefore words are
+            space++;                              
         }
         else if (prompt[i] == 33 || prompt[i] == 46 || prompt[i] == 63)
         {
-            sentence++;                             //no way sentences are being counted properly as letters are a complete messs
+            sentence++;                            
         }
 
     }
     //space + 1 indicates the ability to count the words as the assumption is sentence does not end in space
     int words = space + 1;
     //we get average of both to plug into the formula after
-    float averageL = 100 * ((float)letterCount / (float)words);
-    float averageS = 100 * ((float) sentence / (float) words)
+    float averageL = 100 * ((float)letterCount / words);
+    float averageS = 100 * ((float) sentence / words)
     
-    int index = round(((0.0588 * averageL) - (0.296 * averageS) - 15.8));
+    int index = round(0.0588 * averageL - 0.296 * averageS - 15.8));
     
     if (index < 1)
     {
