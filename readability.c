@@ -38,10 +38,10 @@ int main(void)
     //space + 1 indicates the ability to count the words as the assumption is sentence does not end in space
     int words = space + 1;
     //we get average of both to plug into the formula after
-    double averageL = 100 * ((float)letterCount / (float)words);
+    float averageL = 100 * ((float)letterCount / (float)words);
     float averageS = 100 * ((float) sentence / (float) words)
     
-    int index = (int) round(((0.0588 * averageL) - (0.296 * averageS) - 15.8));
+    int index = round(((0.0588 * averageL) - (0.296 * averageS) - 15.8));
     
     if (index < 1)
     {
