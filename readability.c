@@ -7,18 +7,18 @@
 
 int main(void)
 {
-    string prompt;
-    int lengthOfPrompt = 0;
+    
+    
     int letterCount = 0;
     int space = 0;
     int sentence = 0;
     //We ask user until it has a prompt
-    do
-    {
-        prompt = get_string("Enter prompt to analyze the readibility \n");
-        lengthOfPrompt = strlen(prompt);
-    }
-    while (lengthOfPrompt <= 0);
+   // do
+    //{
+        string prompt = get_string("Enter prompt to analyze the readibility \n");
+        int lengthOfPrompt = strlen(prompt);
+    //}
+    //while (lengthOfPrompt <= 0);
     for (int i = 0; i < lengthOfPrompt; i++)
     {
         if (isalpha(prompt[i])) //CHECK FOR RANGES A-Z as letters are not being counted properly
