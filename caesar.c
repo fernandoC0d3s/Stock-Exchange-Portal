@@ -5,11 +5,11 @@
 #include <string.h>
 
 bool iskeyValid(string s);
-int main(int argc, string argv[])
+int main(int argc, string argv[] )
 {
-    if(argc != 2 || iskeyValid(argv[1]))
+    if(argc != 2 || !iskeyValid(argv[1]))
     {
-       printf("Usage: ./caesar key");
+       printf("Usage: ./caesar key\n");
        return 1;
     }
     int key = atoi(argv[1]);
@@ -27,7 +27,7 @@ int main(int argc, string argv[])
             char m = 'A';
             if(islower(c))
                 m = 'a';
-            
+        
             printf("%c", (c - m + key) % 26 + m);
         }
         else
@@ -40,14 +40,8 @@ bool iskeyValid(string s)
 {
     int length = strlen(s);
     for (int i = 0; i < length; i++)
-    {
         if(!isdigit(s[i]))
-        {
             return false;
-        }    
-        
-        
-          
-    }
-     return true; 
+
+    return true; 
 }
