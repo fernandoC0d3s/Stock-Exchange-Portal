@@ -93,7 +93,7 @@ void print_winner(void)
             winners[i] = candidates[i].name;
         }
     }
-    for(int i = 0; i < winner; i++)
+    for(int i = 0; i < winner+ ; i++)
     {
         printf("%s", winners[i]);
         printf("\n");
