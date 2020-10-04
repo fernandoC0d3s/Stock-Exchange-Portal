@@ -170,25 +170,17 @@ void tabulate(void)
 // Print the winner of the election, if there is one
 bool print_winner(void)
 {
-    int totalVotes = round(voter_count / 50);
-    for (int i = 0; i < candidate_count; i++)
+    int totalVotes = round(voter_count / 2);
+    for(int i = 0; i < candidates_count; i++)
     {
-        if(candidates[i].eliminated == false)
-            totalVotes += candidates[i].votes;
-    }
-    
-    int majority = round(totalVotes / 50);
-    
-    for (int i = 0; i < candidate_count; i++)
-    {
-        if (majority  < candidates[i].votes && candidates[i].eliminated == false)
+        if(candidates[i].votes > totalVotes && candidates.elimination == false)
         {
             printf("%s", candidates[i].name);
             return true;
-            
         }
-    }    
+    }
     return false;
+            
 }
 
 // Return the minimum number of votes any remaining candidate has //chek through all candidates votes return that quantity
