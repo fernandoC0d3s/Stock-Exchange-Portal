@@ -171,11 +171,16 @@ void tabulate(void)
 bool print_winner(void)
 {
     int totalVotes = round(voter_count / 2);
+    int winners =0;
     for(int i = 0; i < candidate_count; i++)
     {
         if(candidates[i].votes > totalVotes && candidates[i].eliminated == false)
         {
+            winners++;
             printf("%s", candidates[i].name);
+        }
+        if(winners >= 1)
+        {
             return true;
         }
     }
