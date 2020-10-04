@@ -180,6 +180,7 @@ bool print_winner(void)
         if(candidates[i].votes >= totalVotes)
         {
             printf("%s", candidates[i].name);
+            return true;
         }
     }
     
