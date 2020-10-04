@@ -219,14 +219,13 @@ bool is_tie(int min)
                 equals++;
             }
             if (equals == candidateCountT)
-             {
+            {
                 return true;
             }
+            return false;
             
         }
     }
-    
-    return false;
 }
 
 // Eliminate the candidate (or candidates) in last place
