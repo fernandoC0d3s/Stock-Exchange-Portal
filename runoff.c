@@ -174,12 +174,12 @@ bool print_winner(void)
     {
         if (totalVotes  > candidates[i].votes && candidates[i].eliminated == false)
         {
-            printf("%s", candidates[i].name);
             printf("\n");
+            printf("%s", candidates[i].name);
             return true;
             
         }
-        return false;
+        
     }
     return false;
 }
