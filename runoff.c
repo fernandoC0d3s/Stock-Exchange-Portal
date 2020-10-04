@@ -171,9 +171,9 @@ void tabulate(void)
 bool print_winner(void)
 {
     int totalVotes = round(voter_count / 2);
-    for(int i = 0; i < candidates_count; i++)
+    for(int i = 0; i < candidate_count; i++)
     {
-        if(candidates[i].votes > totalVotes && candidates.elimination == false)
+        if(candidates[i].votes > totalVotes && candidates[i].eliminated == false)
         {
             printf("%s", candidates[i].name);
             return true;
