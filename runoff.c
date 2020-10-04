@@ -177,7 +177,7 @@ bool print_winner(void)
     totalVotes = totalVotes / 2;
     for (int i = 0; i < candidate_count; i++)
     {
-        if(candidates[i].votes >= totalVotes)
+        if(candidates[i].votes > totalVotes)
         {
             printf("%s", candidates[i].name);
             return true;
