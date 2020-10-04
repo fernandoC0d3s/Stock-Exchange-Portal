@@ -216,20 +216,19 @@ bool is_tie(int min)
             if(candidates[i].votes == min)
             {
                 equals++;
-                if(equals == realCandidates)
-                {
-                    return true;
-                }
-                else if(equals != realCandidates)
-                {
-                    return false;
-                }
+                
             } 
+        }
+        if(equals == realCandidates)
+        {
+            return true;
+        }
+        else if(equals != realCandidates)
+        {
+            return false;
         }
     }
     return false;
-    
-    
 }
 
 // Eliminate the candidate (or candidates) in last place
