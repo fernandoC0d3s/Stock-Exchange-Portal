@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 // Max voters and candidates
 #define MAX_VOTERS 100
@@ -148,7 +149,7 @@ void tabulate(void)
      
      for (int voter = 0; voter < voter_count; voter++)
      {
-        for (int preference =0; preference < candidate_count; preference++)
+        for (int preference = 0; preference < candidate_count; preference++)
         {
             int candidateNumber = preferences[voter][preference];
             if(candidates[candidateNumber].eliminated == false)
@@ -169,17 +170,15 @@ void tabulate(void)
 // Print the winner of the election, if there is one
 bool print_winner(void)
 {
-    int totalVotes = voter_count / 50;
+    int totalVotes = round(voter_count / 50);
     for (int i = 0; i < candidate_count; i++)
     {
         if (totalVotes  < candidates[i].votes && candidates[i].eliminated == false)
         {
-            printf("\n");
             printf("%s", candidates[i].name);
             return true;
             
         }
-        
     }
     return false;
 }
