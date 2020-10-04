@@ -129,7 +129,7 @@ int main(int argc, string argv[])
 // Record preference if vote is valid
 bool vote(int voter, int rank, string name)
 {
-    for(int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         if (strcmp(candidates[i].name, name) == 0)
         {
@@ -145,14 +145,14 @@ bool vote(int voter, int rank, string name)
 // Tabulate votes for non-eliminated candidates //here whe check with an if statement if the candidate is eliminated or not we continue to the next I
 void tabulate(void)
 {
-     //sort of a repetive thatsays until vote not casted go to next preference but keeping in mind if they are all elimninated dont count sorr
+    //sort of a repetive thatsays until vote not casted go to next preference but keeping in mind if they are all elimninated dont count sorr
      
      for (int voter = 0; voter < voter_count; voter++)
      {
         for (int preference = 0; preference < candidate_count; preference++)
         {
             int candidateNumber = preferences[voter][preference];
-            if(candidates[candidateNumber].eliminated == false)
+            if (candidates[candidateNumber].eliminated == false)
             {
                 candidates[candidateNumber].votes++;
                 break;
@@ -163,7 +163,7 @@ void tabulate(void)
      
             
        
-     }
+    }
     //return;
 }
 
@@ -172,9 +172,9 @@ bool print_winner(void)
 {
     int totalVotes = round(voter_count / 2);
     int winners =0;
-    for(int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if(candidates[i].votes > totalVotes && candidates[i].eliminated == false)
+        if (candidates[i].votes > totalVotes && candidates[i].eliminated == false)
         {
             printf("%s\n", candidates[i].name);
             return true;
@@ -204,11 +204,11 @@ int find_min(void)
 bool is_tie(int min)
 {
     // TODO /.just do the same as with the m
-    for (int i =0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if(candidates[i].eliminated == false)
+        if (candidates[i].eliminated == false)
         {
-            if(candidates[i].votes != min)
+            if (candidates[i].votes != min)
             {
                 return false;
             }
