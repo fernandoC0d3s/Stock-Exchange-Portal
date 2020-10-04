@@ -169,21 +169,17 @@ void tabulate(void)
 // Print the winner of the election, if there is one
 bool print_winner(void)
 {
-    int totalVotes = 0;
+    int totalVotes = voter_count / 50;
     for (int i = 0; i < candidate_count; i++)
     {
-        totalVotes += candidates[i].votes;
-    }
-    totalVotes = totalVotes / 2;
-    for (int i = 0; i < candidate_count; i++)
-    {
-        if(candidates[i].votes > totalVotes)
+        if (totalVotes  > candidates[i].votes)
         {
-            printf("%s", candidates[i].name);
             return true;
+            printf("%s", candidates[i].name);
+            
         }
+        return false;
     }
-    
     return false;
 }
 
@@ -222,7 +218,9 @@ bool is_tie(int min)
             {
                 return true;
             }
+            
             return false;
+            
             
         }
         return false;
