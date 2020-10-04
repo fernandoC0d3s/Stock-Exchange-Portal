@@ -218,7 +218,7 @@ bool is_tie(int min)
             {
                 equals++;
             }
-            if (equals == candidateCountT)
+            if (equals > candidateCountT)
             {
                 return true;
             }
