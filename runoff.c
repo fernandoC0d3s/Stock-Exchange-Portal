@@ -173,7 +173,7 @@ bool print_winner(void)
     int totalVotes = round(voter_count / 50);
     for (int i = 0; i < candidate_count; i++)
     {
-        if (totalVotes  < candidates[i].votes && candidates[i].eliminated == false)
+        if (totalVotes  > candidates[i].votes && candidates[i].eliminated == false)
         {
             printf("%s", candidates[i].name);
             return true;
