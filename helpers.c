@@ -4,9 +4,9 @@
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
-    for(int row = 0; row < height-1; row++)
+    for(int row = 0; row < height; row++)
     {
-        for(int column = 0; column < width -1; column++)
+        for(int column = 0; column < width; column++)
         {
             int colorRed = round(image[row][column].rgbtRed);
             int colorGreen = round(image[row][column].rgbtGreen);
