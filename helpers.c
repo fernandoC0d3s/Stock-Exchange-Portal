@@ -77,22 +77,20 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for(int column = 0; column < width; column++)
         {
-            //float colorRed = image[row][column].rgbtRed;
-            //float colorGreen = image[row][column].rgbtGreen;
-            //float colorBlue = image[row][column].rgbtBlue;
+            float colorRed = image[row][column].rgbtRed;
+            float colorGreen = image[row][column].rgbtGreen;
+            float colorBlue = image[row][column].rgbtBlue;
             
             
-            //image[row][column].rgbtRed =  image[row][width-column -1].rgbtRed;
-            //image[row][column].rgbtGreen = image[row][width-column -1].rgbtGreen;
-            //image[row][column].rgbtBlue = image[row][width-column -1].rgbtBlue;
+            image[row][column].rgbtRed =  image[row][width-column -1].rgbtRed;
+            image[row][column].rgbtGreen = image[row][width-column -1].rgbtGreen;
+            image[row][column].rgbtBlue = image[row][width-column -1].rgbtBlue;
             
-            //image[row][width-column -1].rgbtRed = colorRed;
-            //image[row][width-column -1].rgbtGreen = colorGreen;
-            //image[row][width-column -1].rgbtBlue = colorBlue;
+            image[row][width-column -1].rgbtRed = colorRed;
+            image[row][width-column -1].rgbtGreen = colorGreen;
+            image[row][width-column -1].rgbtBlue = colorBlue;
             
-            RGBTRIPLE temp =image[row][column];
-            image[row][column] = image[row][width - column - 1];
-            image[row][width - column- 1] = temp;
+            
             
         }
     }    
