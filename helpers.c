@@ -19,11 +19,6 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             image[row][column].rgbtRed = roundedValue;
             image[row][column].rgbtGreen = roundedValue;
             image[row][column].rgbtBlue = roundedValue;
-            
-           
-            
-            
-            
   
         }
     }
