@@ -76,15 +76,22 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for(int column = 0; column < width/2; column++)
         {
-            int counter = 0;
-            counter--;
+            float colorRed = image[row][column].rgbtRed;
+            float colorGreen = image[row][column].rgbtGreen;
+            float colorBlue = image[row][column].rgbtBlue;
             
-            RGBTRIPLE first = image[row][column];
-            RGBTRIPLE temp = image[row][column];
-            RGBTRIPLE last = image[row][width -1 - column]; // last pixel in array
-            first = last; //make pixel first same to last one
-            last = temp; // make last pixel first using temporary value
-          
+            
+            image[row][column].rgbtRed =  image[row][width-column -1].rgbtRed;
+            image[row][column].rgbtGreen = image[row][width-column -1].rgbtGreen;
+            image[row][column].rgbtBlue = image[row][width-column -1].rgbtBlue;
+            
+            image[row][width-column -1].rgbtRed = colorRed;
+            image[row][width-column -1].rgbtGreen = colorGreen;
+            image[row][width-column -1].rgbtBlue = colorBlue;
+            
+            
+            
+            
             
         }
     }    
