@@ -11,17 +11,17 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for(int column = 0; column < width; column++)
         {
-            float colorRed = image[row][column].rgbtRed;
-            float colorGreen = image[row][column].rgbtGreen;
-            float colorBlue = image[row][column].rgbtBlue;
+            int colorRed = round(image[row][column].rgbtRed);
+            int colorGreen = round(image[row][column].rgbtGreen);
+            int colorBlue = round(image[row][column].rgbtBlue);
             
             
             double average = (colorRed + colorGreen + colorBlue) / 3;
             int roundedValue = round(average);
             
-            image[row][column].rgbtRed = average;
-            image[row][column].rgbtGreen = average;
-            image[row][column].rgbtBlue = average;
+            image[row][column].rgbtRed = roundedValue;
+            image[row][column].rgbtGreen = roundedValue;
+            image[row][column].rgbtBlue = roundedValue;
             
            
             
