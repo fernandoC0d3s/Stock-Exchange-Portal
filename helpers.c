@@ -72,26 +72,27 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
+    int width = width /2; // one less comaprison so it should run faster (hyptho)
      for(int row = 0; row < height; row++)
     {
-        for(int column = 0; column < width/2; column++)
+        for(int column = 0; column < width; column++)
         {
-            float colorRed = image[row][column].rgbtRed;
-            float colorGreen = image[row][column].rgbtGreen;
-            float colorBlue = image[row][column].rgbtBlue;
+            //float colorRed = image[row][column].rgbtRed;
+            //float colorGreen = image[row][column].rgbtGreen;
+            //float colorBlue = image[row][column].rgbtBlue;
             
             
-            image[row][column].rgbtRed =  image[row][width-column -1].rgbtRed;
-            image[row][column].rgbtGreen = image[row][width-column -1].rgbtGreen;
-            image[row][column].rgbtBlue = image[row][width-column -1].rgbtBlue;
+            //image[row][column].rgbtRed =  image[row][width-column -1].rgbtRed;
+            //image[row][column].rgbtGreen = image[row][width-column -1].rgbtGreen;
+            //image[row][column].rgbtBlue = image[row][width-column -1].rgbtBlue;
             
-            image[row][width-column -1].rgbtRed = colorRed;
-            image[row][width-column -1].rgbtGreen = colorGreen;
-            image[row][width-column -1].rgbtBlue = colorBlue;
+            //image[row][width-column -1].rgbtRed = colorRed;
+            //image[row][width-column -1].rgbtGreen = colorGreen;
+            //image[row][width-column -1].rgbtBlue = colorBlue;
             
-            
-            
-            
+            RGBTRIPLE temp =image[row][column];
+            image[row][column] = image[row][width - column - 1];
+            image[row][width - column- 1] = temp;
             
         }
     }    
