@@ -72,7 +72,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-    int width = width /2; // one less comaprison so it should run faster (hyptho)
+    width = width /2; // one less comaprison so it should run faster (hyptho)
      for(int row = 0; row < height; row++)
     {
         for(int column = 0; column < width; column++)
