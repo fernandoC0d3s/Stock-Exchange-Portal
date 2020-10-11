@@ -79,7 +79,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             int counter = 0;
             counter--;
             
-            RGBTRIPLE first = image[row][column -1];  //FIRST PIXEL
+            image[row][column] = image[row][column -1];  //FIRST PIXEL
             //RGBTRIPLE temp = image[row][column];
             //RGBTRIPLE last = image[row][width -1]; // last pixel in array
             //first = last; //make pixel first same to last one
