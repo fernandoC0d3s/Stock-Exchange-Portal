@@ -116,8 +116,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         continue;
                     }
                     sumRed += image[row + movimientoLateral][column + movimientoHorizontal].rgbtRed;
-                    sumGreen+= image[row + movimientoLateral][column + movimientoHorizontal].rgbtBlue;
-                    sumBlue += image[row + movimientoLateral][column + movimientoHorizontal].rgbtGreen;
+                    sumGreen+= image[row + movimientoLateral][column + movimientoHorizontal].rgbtGreen;
+                    sumBlue += image[row + movimientoLateral][column + movimientoHorizontal].rgbtBlue;
                     count++;
                 }
             }
@@ -125,7 +125,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int averageRed = round(sumRed/count);
             int averageGreen = round(sumGreen/count);
             int averageBlue = round(sumBlue/ count);
-            tempImage[row][column] = image[row][column];
+            tempImage[row][column].rgbtBlue = averageBlue ;
+            tempImage[row][column].rgbtRed =averageRed ;
+            tempImage[row][column].rgbtGreen =averageGreen ; 
             
         }
     }    
