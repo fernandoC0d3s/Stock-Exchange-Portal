@@ -94,14 +94,17 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
+    
+    RGBTRIPLE tempImage[height][width];
+    
     for (int row = 0; row < height; row++)
     {
         for (int column = 0; column < width; column++)
         {
-            float count = 0.00;
-            double sumRed = 0.00;
-            double sumGreen = 0.00;
-            double sumBlue = 0.00;
+            int count = 0.00;
+            float sumRed = 0.00;
+            float sumGreen = 0.00;
+            float sumBlue = 0.00;
             //current box
             if(image[row][column].rgbtRed >= 0)
             {
@@ -173,9 +176,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int averageRed = round(sumRed / count);
             int averageGreen = round(sumGreen / count);
             int averageBlue = round(sumBlue / count);
-            image[row][column].rgbtRed = averageRed ;
-            image[row][column].rgbtGreen = averageGreen;
-            image[row][column].rgbtBlue = averageBlue;
+            tempImage[row][column].rgbtRed = averageRed ;
+            tempImage[row][column].rgbtGreen = averageGreen;
+            tempImage[row][column].rgbtBlue = averageBlue;
             
         
 
@@ -184,5 +187,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             
         }
     }
+    for (int row = 0; row < height; row++)
+    {
+        for (int column = 0; column < width; column++)
+        {
+             image[row][column] = tempImage[row][column];
+        }
+    }    
+    
     return;
 }
