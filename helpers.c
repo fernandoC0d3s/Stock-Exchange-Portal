@@ -101,97 +101,46 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int column = 0; column < width; column++)
         {
-            float count = 0;
+            int count = 0;
             int sumRed = 0;
             int sumGreen = 0;
             int sumBlue = 0;
-            //current box
-            if(image[row][column].rgbtRed >= 0)
-            {
-                sumRed += image[row][column].rgbtRed;
-                sumGreen += image[row][column].rgbtGreen;
-                sumBlue += image[row][column].rgbtBlue;
-                count++;
-            }    
-             if(image[row][column+1].rgbtRed >= 0)
-            {
-                sumRed += image[row][column+1].rgbtRed;
-                sumGreen += image[row][column+1].rgbtGreen;
-                sumBlue += image[row][column+1].rgbtBlue;
-                count++;
-            }    
-             if(image[row][column-1].rgbtRed >= 0)
-            {
-                sumRed += image[row][column-1].rgbtRed;
-                sumGreen += image[row][column-1].rgbtGreen;
-                sumBlue += image[row][column-1].rgbtBlue;
-                count++;
-            }    
             
-            //we start with row on top
-            //directly on top
-            if(image[row +1 ][column].rgbtRed >= 0)
+            //assumption from repetitive motion we could start from bottom to top 
+            for (int movimientoLateral = -1; movimientoLateral < 2; movimientoLateral++)
             {
-                sumRed += image[row +1][column].rgbtRed;
-                sumGreen += image[row+1][column].rgbtGreen;
-                sumBlue += image[row+1][column].rgbtBlue;
-                count++;
+                for (int movimientoHorizontal = -1; movimientoHorizontal < 2; movimientoHorizontal++)
+                {
+                    if(movimientoLateral + row > height -1 || row - movimientoLateral > height - 1 || movimientoHorizontal + column > width -1 || column - movimientoHorizontal > width -1)
+                    {
+                        continue;
+                    }
+                    sumRed += image[row + movimientoLateral][column + movimientoHorizontal].rgbtRed;
+                    sumGreen+= image[row + movimientoLateral][column + movimientoHorizontal].rgbtBlue;
+                    sumBlue += image[row + movimientoLateral][column + movimientoHorizontal].rgbtGreen;
+                    count++;
+                }
             }
-            //left top row
-            if(image[row +1 ][column -1].rgbtRed >= 0)
-            {
-                sumRed += image[row +1][column-1].rgbtRed;
-                sumGreen += image[row+1][column-1].rgbtGreen;
-                sumBlue += image[row+1][column-1].rgbtBlue;
-                count++;
-            }
-            if(image[row +1 ][column +1].rgbtRed >= 0)
-            {
-                sumRed += image[row +1][column+1].rgbtRed;
-                sumGreen += image[row+1][column+1].rgbtGreen;
-                sumBlue += image[row+1][column+1].rgbtBlue;
-                count++;
-            }
-            if(image[row -1 ][column].rgbtRed >= 0)
-            {
-                sumRed += image[row -1][column].rgbtRed;
-                sumGreen += image[row-1][column].rgbtGreen;
-                sumBlue += image[row-1][column].rgbtBlue;
-                count++;
-            }
-            if(image[row -1 ][column+1].rgbtRed != 0)
-            {
-                sumRed += image[row -1][column+1].rgbtRed;
-                sumGreen += image[row-1][column+1].rgbtGreen;
-                sumBlue += image[row-1][column+1].rgbtBlue;
-                count++;
-            }
-            if(image[row -1 ][column-1].rgbtRed >= 0 && image[row -1 ][column-1].rgbtBlue >= 0)
-            {
-                sumRed += image[row -1][column-1].rgbtRed;
-                sumGreen += image[row-1][column-1].rgbtGreen;
-                sumBlue += image[row-1][column-1].rgbtBlue;
-                count++;
-            }
-            int averageRed = round(sumRed / count);
-            int averageGreen = round(sumGreen / count);
-            int averageBlue = round(sumBlue / count);
-            tempImage[row][column].rgbtRed = averageRed ;
-            tempImage[row][column].rgbtGreen = averageGreen;
-            tempImage[row][column].rgbtBlue = averageBlue;
             
+            double averageRed = round(sumRed/count);
+            double averageGreen = round(sumGreen/count);
+            double averageBlue = round(sumBlue/ count);
+            tempImage[row][column] = image[row][column];
             
-        }
-    }
-    for (int row = 0; row < height; row++)
-    {
-        for (int column = 0; column < width; column++)
-        {
-            image[row][column].rgbtRed  = tempImage[row][column].rgbtRed;
-            image[row][column].rgbtGreen  = tempImage[row][column].rgbtGreen;
-            image[row][column].rgbtBlue = tempImage[row][column].rgbtBlue;
         }
     }    
+        
     
-    return;
+    for (int row = 0; row < height; row++)
+    {
+       for (int column = 0; column < width; column++)
+       {
+              image[row][column] = tempImage[row][column] ;
+       }
+    }
+  
+        
+    
+    return; 
 }
+
