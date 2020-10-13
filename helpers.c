@@ -187,7 +187,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int column = 0; column < width; column++)
         {
-             image[row][column] = tempImage[row][column];
+            image[row][column].rgbtRed  = tempImage[row][column].rgbtRed;
+            image[row][column].rgbtRed  = tempImage[row][column].rgbtGreen;
+            image[row][column].rgbtBlue = tempImage[row][column].rgbtBlue;
         }
     }    
     
