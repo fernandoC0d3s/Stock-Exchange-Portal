@@ -122,9 +122,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
             
-            double averageRed = round(sumRed/count);
-            double averageGreen = round(sumGreen/count);
-            double averageBlue = round(sumBlue/ count);
+            int averageRed = round(sumRed/count);
+            int averageGreen = round(sumGreen/count);
+            int averageBlue = round(sumBlue/ count);
             tempImage[row][column] = image[row][column];
             
         }
