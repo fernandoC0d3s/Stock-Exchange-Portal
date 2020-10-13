@@ -94,28 +94,30 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    for (int row = 0; 0 < height; row++)
+    for (int row = 0; row < height; row++)
     {
-        for (int column = 0; 0 < width; column++)
+        for (int column = 0; column < width; column++)
         {
             int count = 0;
-            double sumRed, sumGreen, sumBlue;
+            double sumRed = 0;
+            double sumGreen = 0;
+            double sumBlue = 0;
             //current box
-            if(image[row][column].rgbtRed != NULL)
+            if(image[row][column].rgbtRed != 0)
             {
                 sumRed += image[row][column].rgbtRed;
                 sumGreen += image[row][column].rgbtGreen;
                 sumBlue += image[row][column].rgbtBlue;
                 count++;
             }    
-             if(image[row][column+1].rgbtRed != NULL)
+             if(image[row][column+1].rgbtRed != 0)
             {
                 sumRed += image[row][column+1].rgbtRed;
                 sumGreen += image[row][column+1].rgbtGreen;
                 sumBlue += image[row][column+1].rgbtBlue;
                 count++;
             }    
-             if(image[row][column-1].rgbtRed != NULL)
+             if(image[row][column-1].rgbtRed != 0)
             {
                 sumRed += image[row][column-1].rgbtRed;
                 sumGreen += image[row][column-1].rgbtGreen;
@@ -125,7 +127,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             
             //we start with row on top
             //directly on top
-            if(image[row +1 ][column].rgbtRed != NULL)
+            if(image[row +1 ][column].rgbtRed != 0)
             {
                 sumRed += image[row +1][column].rgbtRed;
                 sumGreen += image[row+1][column].rgbtGreen;
@@ -133,35 +135,35 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 count++;
             }
             //left top row
-            if(image[row +1 ][column -1].rgbtRed != NULL)
+            if(image[row +1 ][column -1].rgbtRed != 0)
             {
                 sumRed += image[row +1][column-1].rgbtRed;
                 sumGreen += image[row+1][column-1].rgbtGreen;
                 sumBlue += image[row+1][column-1].rgbtBlue;
                 count++;
             }
-            if(image[row +1 ][column +1].rgbtRed != NULL)
+            if(image[row +1 ][column +1].rgbtRed != 0)
             {
                 sumRed += image[row +1][column+1].rgbtRed;
                 sumGreen += image[row+1][column+1].rgbtGreen;
                 sumBlue += image[row+1][column+1].rgbtBlue;
                 count++;
             }
-            if(image[row -1 ][column].rgbtRed != NULL)
+            if(image[row -1 ][column].rgbtRed != 0)
             {
                 sumRed += image[row -1][column].rgbtRed;
                 sumGreen += image[row-1][column].rgbtGreen;
                 sumBlue += image[row-1][column].rgbtBlue;
                 count++;
             }
-            if(image[row -1 ][column+1].rgbtRed != NULL)
+            if(image[row -1 ][column+1].rgbtRed != 0)
             {
                 sumRed += image[row -1][column+1].rgbtRed;
                 sumGreen += image[row-1][column+1].rgbtGreen;
                 sumBlue += image[row-1][column+1].rgbtBlue;
                 count++;
             }
-            if(image[row -1 ][column-1].rgbtRed != NULL)
+            if(image[row -1 ][column-1].rgbtRed != 0)
             {
                 sumRed += image[row -1][column-1].rgbtRed;
                 sumGreen += image[row-1][column-1].rgbtGreen;
