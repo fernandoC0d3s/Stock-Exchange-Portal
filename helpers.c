@@ -99,9 +99,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int column = 0; column < width; column++)
         {
             float count = 0.00;
-            int sumRed = 0;
-            int sumGreen = 0;
-            int sumBlue = 0;
+            float sumRed = 0.00;
+            float sumGreen = 0.00;
+            float sumBlue = 0.00;
             //current box
             if(image[row][column].rgbtRed >= 0)
             {
