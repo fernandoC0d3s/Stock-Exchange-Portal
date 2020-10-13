@@ -170,9 +170,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 sumBlue += image[row-1][column-1].rgbtBlue;
                 count++;
             }
-            double averageRed = sumRed / count;
-            double averageGreen = sumGreen / count;
-            double averageBlue = sumBlue / count;
+            int averageRed = round(sumRed / count);
+            int averageGreen = round(sumGreen / count);
+            int averageBlue = round(sumBlue / count);
             image[row][column].rgbtRed = averageRed ;
             image[row][column].rgbtGreen = averageGreen;
             image[row][column].rgbtBlue = averageBlue;
