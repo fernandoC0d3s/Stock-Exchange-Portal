@@ -111,7 +111,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int movimientoHorizontal = -1; movimientoHorizontal < 2; movimientoHorizontal++)
                 {
-                    if(column + movimientoHorizontal  < 0 || column + movimientoHorizontal > width -1 ||row + movimientoLateral < 0 || row + movimientoLateral > height - 1)
+                    if (column + movimientoHorizontal  < 0 || column + movimientoHorizontal > width -1 ||row + movimientoLateral < 0 || row + movimientoLateral > height - 1)
                     {
                         continue;
                     }
