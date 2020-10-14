@@ -163,7 +163,7 @@ bool unload(void)
        node* nodePtr = table[i]; /// temporary node to table head
        while (nodePtr != NULL) // i am in linked ist of hash possible value
        {
-         node *temp = nodePtr;    /// 
+         node* temp = nodePtr;    /// 
          nodePtr = nodePtr -> next;  // node leading to theend
          free(temp);
         
