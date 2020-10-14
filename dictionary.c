@@ -105,6 +105,9 @@ bool load(const char *dictionary)
             t -> next = table[hashValue];
             table[hashValue] = t;
        }
+       
+       
+       word_count++;
       
       
       
