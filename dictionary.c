@@ -19,7 +19,7 @@ typedef struct node
 node;
 
 // Number of buckets in hash table
-const unsigned int N = 50;
+const unsigned int N = 1000000;
 
 unsigned int word_count;
 
@@ -58,7 +58,7 @@ unsigned int hash (const char *word)
     int c;
     while ((c = toupper(*word++)))
     {
-        hash = ((hash << 5) + hash) + c; /* hash * 33 + c */. //(DJb2
+        hash = ((hash << 5) + hash) + c; /* hash * 33 + c *///(DJb2
     }
     return hash % N;
 }    
