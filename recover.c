@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     {
         if(JPGHeader(buffer))
         {
-            if(outputPtr == NULL)
+            if(outputPtr != NULL)
             {
                 fclose(outputPtr);
             }
