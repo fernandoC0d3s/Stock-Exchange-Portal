@@ -19,11 +19,12 @@ typedef struct node
 node;
 
 // Number of buckets in hash table
-const unsigned int N = 26;
-// initialise positive hash value using unsigned int  
-// initialise (positive) hash table word count 
+const unsigned int N = 50;
+
 unsigned int word_count;
-// initialise positive hash value using unsigned int 
+
+
+
 unsigned int hash_value;
 
 
@@ -75,10 +76,6 @@ bool load(const char *dictionary)
         return false;
     }    
     
-    for(int i =0; i < N; i++)
-    {
-        table[i] = NULL;
-    }
     
     char tempWord[LENGTH +1]; //size of word basically
     
