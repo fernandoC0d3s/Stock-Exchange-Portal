@@ -9,6 +9,7 @@
 #include <ctype.h>
 #include <strings.h>
 
+
 // Represents a node in a hash table
 typedef struct node
 {
@@ -22,6 +23,8 @@ const unsigned int N = 26;
 // initialise positive hash value using unsigned int  
 // initialise (positive) hash table word count 
 unsigned int word_count;
+// initialise positive hash value using unsigned int 
+unsigned int hash_value;
 
 
 // Hash table
@@ -48,15 +51,15 @@ bool check(const char *word)
 }
 
 // Hashes word to a number
-unsigned int hash(const char *word)
+unsigned int hash (const char *word)
 {
-    int value =0;
-    
-    for(int i=0; word[i] != '\0'; i++)
+    unsigned long hash = 5381;
+    int c;
+    while ((c = toupper(*word++)))
     {
-        value += tolower(word[i]);
+        hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
     }
-    return value % N;
+    return hash % N;
 }    
 
 // Loads dictionary into memory, returning true if successful else false
