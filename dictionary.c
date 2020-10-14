@@ -92,11 +92,8 @@ bool load(const char *dictionary)
             table[hashValue] = t;
 
        }
-       else
-       {
             t -> next = table[hashValue];
-            table[hashValue] = t;
-       }
+           table[hashValue] = t;
        word_count++;
     }
      fclose(file);
