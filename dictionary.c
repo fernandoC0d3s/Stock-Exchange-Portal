@@ -19,8 +19,7 @@ node;
 
 // Number of buckets in hash table
 const unsigned int N = 26;
-// initialise positive hash value using unsigned int 
-unsigned int hash_value;
+// initialise positive hash value using unsigned int  
 // initialise (positive) hash table word count 
 unsigned int word_count;
 
@@ -31,15 +30,14 @@ node *table[N];
 // Returns true if word is in dictionary else false
 bool check(const char *word)
 {
-    // TODO
-    
-    
     int key = hash(word);
+    
+    
     node* ptr = table[key];
     
     while (ptr != NULL)
     {
-        if (strcasecmp(ptr -> word, word) ==0)
+        if (strcasecmp(ptr->word, word) ==0)
         {
             return true;
         }
@@ -163,7 +161,7 @@ bool unload(void)
        while (nodePtr != NULL) // i am in linked ist of hash possible value
        {
          node* temp = nodePtr;    /// 
-         nodePtr = nodePtr -> next;  // node leading to theend
+         nodePtr = nodePtr->next;  // node leading to theend
          free(temp);
         
        }
@@ -172,5 +170,5 @@ bool unload(void)
     
     
     
-    return false;
+    return true;
 }
