@@ -19,11 +19,9 @@ typedef struct node
 node;
 
 // Number of buckets in hash table
-const unsigned int N = 10100;
+const unsigned int N = 100000;
 
 unsigned int word_count;
-
-
 
 unsigned int hash_value;
 
@@ -99,46 +97,10 @@ bool load(const char *dictionary)
             t -> next = table[hashValue];
             table[hashValue] = t;
        }
-       
-       
        word_count++;
-      
-      
-      
-        
     }
      fclose(file);
      return true;
-    
-    
-    //read strings from file one at a time
-    //fscanf(reads the the scan )
-    
-    //while loop until fscanf == eof 
-    
-    //f(scanf(file, %s, word))
-    
-    
-    //create a new node for each word
-    
-    //malloc check if null after 
-    
-    //hash word to obtain a hash value
-    
-    //node *list == malloc(sizeofNode(list))
-    //
-    
-    //insert node into hash at the location
-    //allocates memory
-    //node*n = malloc(sizeof(node));
-    //strcopy(n->word, "hello");
-    // n-> next =null;
-    //to insert to list(n -> next = list)
-    // list =n
-    
-    
-    
-   
 }
 
 // Returns number of words in dictionary if loaded else 0 if not yet loaded
@@ -153,8 +115,6 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful else false
 bool unload(void)
 {
-    // TODO
-    
    for(int i = 0;  i < N; i++)
    {
        node* nodePtr = table[i]; /// temporary node to table head
@@ -167,8 +127,5 @@ bool unload(void)
        }
        table[i] = NULL;
    }
-    
-    
-    
     return true;
 }
