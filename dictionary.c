@@ -19,7 +19,7 @@ typedef struct node
 node;
 
 // Number of buckets in hash table
-const unsigned int N = 10100;
+const unsigned int N = 1000;
 
 unsigned int word_count;
 
