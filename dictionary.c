@@ -52,13 +52,13 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    unsigned long hash = 5381;
-    int c;
-    while ((c = toupper(*word++)))
+    int value =0;
+    
+    for(int i=0; word[i] != '\0'; i++)
     {
-        hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
+        value += tolower(word[i]);
     }
-    return hash % N;
+    return value % N;
 }    
 
 // Loads dictionary into memory, returning true if successful else false
