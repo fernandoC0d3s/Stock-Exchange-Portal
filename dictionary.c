@@ -81,7 +81,7 @@ bool load(const char *dictionary)
     
     char tempWord[LENGTH +1]; //size of word basically
     
-    while (fscanf(file,"%s\n", temp) != EOF)
+    while (fscanf(file,"%s\n", tempWord) != EOF)
     {
        node *t = malloc(sizeof(node)); // allocates memory of node
        if(t == NULL) //verify node
@@ -152,13 +152,7 @@ unsigned int size(void)
 {
     // TODo
     // Check if there are any words
-    if (word_count > 0)
-    {
-        // Return count
-        return word_count;
-    }
-    // Else
-    return 0;
+    return word_count;
     
 }
 
