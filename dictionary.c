@@ -96,13 +96,13 @@ bool load(const char *dictionary)
        {
             t -> next = table[hashValue];
             table[hashValue] = t;
-            word_count++;
        }
-    }   
-        fclose(file);
-        return true;
+       
+       word_count++;
+    }
+     fclose(file);
+     return true;
 }
-
 
 // Returns number of words in dictionary if loaded else 0 if not yet loaded
 unsigned int size(void)
