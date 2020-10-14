@@ -71,7 +71,7 @@ bool load(const char *dictionary)
     if(file == NULL)
     {
         printf("Could not open file %s",dictionary);
-        return 1;
+        return false;
     }    
     
     for(int i =0; i < N; i++)
