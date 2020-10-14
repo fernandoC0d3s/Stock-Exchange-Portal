@@ -79,7 +79,7 @@ bool load(const char *dictionary)
         table[i] = NULL;
     }
     
-    char temp[LENGTH +1]; //size of word basically
+    char tempWord[LENGTH +1]; //size of word basically
     
     while (fscanf(file,"%s\n", temp) != EOF)
     {
@@ -89,9 +89,9 @@ bool load(const char *dictionary)
            return 1;
        }
     
-       strcpy(t -> word,temp);
+       strcpy(t -> word,tempWord);
        
-       int hashValue = hash(temp);
+       int hashValue = hash(tempWord);
        
        
        if(table[hashValue] == NULL)
