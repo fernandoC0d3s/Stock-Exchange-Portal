@@ -7,12 +7,11 @@ sentence =0
 prompt = get_string("Enter prompt to analyze readability ").strip()
 
 for i in range(len(prompt)):
-    for c in prompt:
-        if c.isalpha():
+        if prompt[i].isalpha():
             letterCount+=1
-        elif c == " ":
+        elif prompt[i] == " ":
             space+=1
-        elif c == '!' or c == '.' or c == '?':
+        elif prompt[i] == '!' or prompt[i] == '.' or prompt[i] == '?':
             sentence+=1
     
 words = space +1 
