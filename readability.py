@@ -25,6 +25,6 @@ index = round(0.0588 * averageL - 0.296 * averageS - 15.8)
 if index < 1:
     print("Before grade 1 \n")
 elif index > 16:
-    print("GRade 16+")
+    print("Grade 16+")
 else:
     print(f"Grade {index}")
