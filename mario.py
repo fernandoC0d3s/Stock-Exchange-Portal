@@ -7,7 +7,7 @@ while True:
         break
 
 blocks = -1
-level=1
+level=0
     
     
     
