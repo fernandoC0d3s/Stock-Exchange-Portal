@@ -7,7 +7,6 @@ while True:
         break
 
 blocks = -1
-level=0
 for level in range(number+1):
     for spaces in range(number - level ):
         print(" ", end="")
