@@ -10,7 +10,7 @@ for i in range(len(prompt)):
     for c in prompt:
         if c.isalpha():
             letterCount+=1
-        elif c == 32:
+        elif c == " ":
             space+=1
         elif c == '!' or c == '.' or c == '?':
             sentence+=1
