@@ -3,7 +3,7 @@ from cs50 import get_int
 
 while True:
     number = get_int("Enter how tall you want your pryamid? ")
-    if number > 1 or number < 8:
+    if number >= 1 or number =< 8:
         break
 
 blocks = -1
