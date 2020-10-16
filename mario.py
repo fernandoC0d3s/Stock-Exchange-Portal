@@ -8,11 +8,8 @@ while True:
 
 blocks = -1
 level=0
-    
-    
-    
-for level in range(number):
-    for spaces in range(number - level -1):
+for level in range(number+1):
+    for spaces in range(number - level ):
         print(" ", end="")
         spaces += 1
         
