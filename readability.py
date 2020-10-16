@@ -10,7 +10,7 @@ for i in range(len(prompt)):
     for c in prompt:
         if c.isalpha():
             letterCount+=1
-        elif c == " ":
+        elif c == 32:
             space+=1
         elif c == '!' or c == '.' or c == '?':
             sentence+=1
@@ -23,7 +23,7 @@ index = round(0.0588 * averageL - 0.296 * averageS - 15.8)
 
 
 if index < 1:
-    print("Before grade 1 \n")
+    print("Before Grade 1")
 elif index > 16:
     print("Grade 16+")
 else:
