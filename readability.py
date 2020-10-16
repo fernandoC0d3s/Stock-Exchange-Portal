@@ -22,7 +22,6 @@ averageS = sentence/words * 100
 index = round(0.0588 * averageL - 0.296 * averageS - 15.8)
 
 
-index = index -1
 if index < 1:
     print("Before grade 1 \n")
 elif index > 16:
