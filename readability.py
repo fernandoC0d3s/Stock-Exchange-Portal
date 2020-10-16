@@ -17,10 +17,10 @@ for i in range(lengthOfPrompt) :
             sentence+=1
     
 words = space +1 
-averageL =100 * (float(letterCount / words))
-averageS = 100 * (float(sentence/words))
+averageL =letterCount / words * 100
+averageS = sentence/words * 100
 
-index = round(float(0.0588 * averageL - 0.296 * averageS - 15.8))
+index = round(0.0588 * averageL - 0.296 * averageS - 15.8)
 
 
 index = index -1
@@ -29,4 +29,4 @@ if index < 1:
 elif index > 16:
     print("GRade 16+")
 else:
-    print(f"Grade \n {index}")
+    print(f"Grade {index}")
