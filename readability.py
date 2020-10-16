@@ -4,10 +4,9 @@ letterCount = 0
 space =0
 sentence =0
 
+prompt = get_string("Enter prompt to analyze readability ").strip()
 
-prompt = get_string("Enter prompt to analyze readability ")
-lengthOfPrompt  = len(prompt)
-for i in range(lengthOfPrompt) :
+for i in range(len(lengthOfPrompt)) :
     for c in prompt:
         if c.isalpha():
             letterCount+=1
