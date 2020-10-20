@@ -22,4 +22,4 @@ with open(csv_path) as csv_file:
     for row in reader:
         names = cutNames(row["name"])
         db.execute("INSERT INTO students(first, middle, last, house, birth) VALUES(?,?,?,?,?)",   
-        names[0], names[1], names[2],row["house"],row["BirthDate"])
+        names[0], names[1], names[2],row["house"],row["birth"])
