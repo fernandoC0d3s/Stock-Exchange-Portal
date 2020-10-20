@@ -4,10 +4,7 @@ import csv
 
 def cutNames(full_name):
     names = full_name.split()
-    if len(names) >= 3:
-        return names
-    else:
-        return[names[0],None, names[1]]
+    return names if len(names) >= 3 else[ names[0], None, names[1] ]
         
 
 
@@ -24,5 +21,5 @@ with open(csv_path) as csv_file:
     reader = csv.DictReader(csv_file)
     for row in reader:
         names = cutNames(row["name"])
-        db.execute("INSERT INTO students(first,middle,last,house,birth)VALUES(?,?,?,?,?)",   
+        db.execute("INSERT INTO students(first, middle, last, house, birth) VALUES(?,?,?,?,?)",   
         names[0], names[1], names[2],row["house"],row["BirthDate"])
