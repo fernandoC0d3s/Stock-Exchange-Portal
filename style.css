@@ -1,0 +1,38 @@
+body
+{
+    margin: 0;
+}
+
+
+header h1
+{
+    
+    display:inline;
+}
+nav ul 
+{
+     display:inline;
+} 
+
+nav ul li{
+    background: black;
+    color:white;
+    display: inline-block;
+    list-style-type: none;
+    padding: 10px 10px;
+}
+
+.row{
+    clear: both;
+}
+.col{
+    float: left;
+    background: pink;
+    border-radius:5px;
+    padding: 10px .5%;
+    margin: .5%;
+    width: 31%;
+}
+footer{
+    clear: both;
+}
