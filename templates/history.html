@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+   <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Ticker</th>
+      <th scope="col">Shares</th>
+      <th scope="col">Price</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for row in rowsTwo %}
+            <tr>
+                <th scope="row">{{row["symbol"]}}</th>
+                <td>{{row["quantity"]}}</td>
+                <td>${{row["price"]}}</td>
+                <td>{{row["timestamp"]}}</td>
+            </tr>
+      {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
