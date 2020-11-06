@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+  <h3>
+  DEPOSIT MORE CASH TO YOUR ACCOUNT
+  <small class="text-muted">With care</small>
+</h3>  
+
+
+ <form class="form-inline" method = "POST">
+  <div class="form-group mb-2">
+    <label for="staticEmail2" class="sr-only">{{cash}}</label>
+    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value={{cash}}>
+  </div>
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="inputPassword2" class="sr-only">Cash to be Added</label>
+    <input type="cash" class="form-control" id="cash" placeholder="Cash to be added" name = "cash">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Confirm Transaction</button>
+</form>
+{% endblock %}
